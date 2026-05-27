@@ -7,39 +7,10 @@ from tkinter import messagebox
 number = random.randint(1, 100)
 intentos = 10
 intento_actual = 1
-numero_anterior = None  
-
-print("Adivina numeros entre 1 y 100 con solo 10 intentos")
-while intentos > 0:
-    print(f"\nIntento Número {intento_actual}") 
-    adivina = int(input("Introduce un numero: ")) 
-    
-    if adivina == number:
-        print(" Adivinaste el numero secreto")
-        break
-    
-    if adivina < number:
-        print(f"El numero secreto es MAYOR a: {adivina}")
-    else:
-        print(f"El numero secreto es MENOR a: {adivina}")
-        
-    numero_anterior = adivina
-    
-    intentos -= 1
-    intento_actual += 1
-    print(f"Te quedan {intentos} intentos.")
-
-if intentos == 0:
-    print("\nSe acabaron tus intentos. El numero era:", number)
-
-# Reinicio para Tkinter
-number = random.randint(1, 100)
-intentos = 10
-intento_actual = 1
 
 ventana = tk.Tk()
 ventana.title("Juego: Adivina el Número (Visual)")
-ventana.geometry("400x350") 
+ventana.geometry("300x200") 
 
 def comprobar_intento():
     global intentos, intento_actual 
@@ -80,7 +51,7 @@ texto_instruccion.pack(pady=5)
 entrada_numero = tk.Entry(ventana, font=("Arial", 12), justify="center")
 entrada_numero.pack(pady=10)
 
-boton_adivinar = tk.Button(ventana, text="Introducir número", command=comprobar_intento, bg="#4CAF50", fg="white", font=("Arial", 10))
+boton_adivinar = tk.Button(ventana, text="Introducir número", command=comprobar_intento, bg="#FFFFFF", fg="black", font=("Arial", 10))
 boton_adivinar.pack(pady=5)
 
 texto_pista = tk.Label(ventana, text="", font=("Arial", 11), fg="black")
